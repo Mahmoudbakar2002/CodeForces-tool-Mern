@@ -1,7 +1,7 @@
 import "./styles/profile-view.css";
 
 export default function ProfileView(props) {
-  const { loadding, name, img, country, city, orginazation } = props;
+  const { loadding, handle, avatar, country, city, organization } = props;
   const loaddingDiv = (width) => (
     <div className="loading-field" style={{ width }}></div>
   );
@@ -16,18 +16,18 @@ export default function ProfileView(props) {
       ) : (
         <img
           className="profile-img"
-          src={img || "https://cdn-userpic.codeforces.com/no-title.jpg"}
+          src={avatar || "https://cdn-userpic.codeforces.com/no-title.jpg"}
           alt="profile"
         />
       )}
-      {loadding ? loaddingDiv("200px") : <h4> {name || "UNKOWN"}</h4>}
+      {loadding ? loaddingDiv("200px") : <h4> {handle || "UNKOWN"}</h4>}
       <br />
-      <p>
+      <div className="mutedText">
         {loadding ? loaddingDiv("150px") : country_city}
         {country_city || loadding ? <br /> : ""}
         {/* <br /> */}
-        {loadding ? loaddingDiv("100px") : orginazation}
-      </p>
+        {loadding ? loaddingDiv("100px") : organization}
+      </div>
     </div>
   );
 }

@@ -1,9 +1,26 @@
 import ProfileView from "./profile-view";
 import "./styles/App.css";
 import { useState } from "react";
+import axios from "axios";
 
 function App() {
-  const [loadding, setLoadding] = useState(false);
+  const [profileLoadding, setProfileLoadding] = useState(false);
+  const [user, setUser] = useState({});
+  const updateHandle = async (handle) => {
+    try {
+      const { data } = await axios.get(
+        `https://codeforces.com/api/user.info?handles=${handle}`
+      );
+      const { result } = data;
+      // console.log(result);
+      setUser(result[0]);
+    } catch (error) {
+      setUser({});
+      console.log(error);
+    } finally {
+      setProfileLoadding(false);
+    }
+  };
 
   return (
     <div className="App">
@@ -22,12 +39,12 @@ function App() {
             <br />
             <input
               type="text"
-              onFocus={(e) => setLoadding(true)}
-              onBlur={(e) => setLoadding(false)}
+              onFocus={(e) => setProfileLoadding(true)}
+              onBlur={(e) => updateHandle(e.target.value)}
               className="text-field"
             />
           </div>
-          <ProfileView loadding={loadding} />
+          <ProfileView loadding={profileLoadding} {...user} />
         </div>
       </div>
     </div>

@@ -22,8 +22,9 @@
     margin: 5px 3px;    
     border: 1px #000 solid;
     border-radius: 100%;
+    object-fit: cover;
 }
-.profile-view p{
+.profile-view .mutedText{
     font-size: small;
     color: #95a5a6;
     font-weight: 500;
