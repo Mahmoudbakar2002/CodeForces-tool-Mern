@@ -3,6 +3,10 @@ body {
   font-family: 'jf-flat';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#fff;
+}
+.dark-bg{
+  background-color: #34495e;
 }
 
 code {

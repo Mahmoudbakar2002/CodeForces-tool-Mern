@@ -1,0 +1,75 @@
+.profile-view{
+    border: 2px #34495e solid;
+    width: 40%; 
+    border-radius: 20px;
+    display: inline-block;
+    /* padding: 5px; */
+    --loaddin-color: #bdc3c7;
+}
+
+.profile-view *{
+    display: inline-block;
+    margin: 0px;
+    animation-name: after-loadding;
+    animation-duration: 600ms;
+    /* animation-iteration-count: infinite; */
+}
+
+.profile-view .profile-img{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin: 5px 3px;    
+    border: 1px #000 solid;
+    border-radius: 100%;
+}
+.profile-view p{
+    font-size: small;
+    color: #95a5a6;
+    font-weight: 500;
+}
+.loading-field{
+    background-color: var(--loaddin-color);
+    /* width: 200px; */
+    display: inline-block;
+    content: "a";
+    height: 10px;
+    animation-name: loadding-field-anim;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    /* transition: width 5s; */
+}
+.loadding-arc{
+    width: 60%;
+    height: 60%;
+    margin-top: 10%;
+    border: 7px transparent solid;
+    border-radius: 100%;
+    border-top-color: var(--loaddin-color);
+    animation-name: loadding-arc-anim;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    /* transform: translate(50% , 50%); */
+    
+}
+@keyframes loadding-field-anim{
+    50%{
+        width: 20px;
+    }
+}
+@keyframes loadding-arc-anim{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes after-loadding{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
