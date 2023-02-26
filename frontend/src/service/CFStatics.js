@@ -1,5 +1,5 @@
 import { getSubmessionsAfterTime } from "./APIhandler";
-
+import { sleep } from "./commonHelper";
 const staticsFromSubmessions = (submessions) => {
   let maxRate = 0;
   const setofACS = new Set();
@@ -39,15 +39,28 @@ const getStaticsOfUser = async (handle, startSeconds = 0) => {
 
 const getStaticsOfUsers = async (handles, startSeconds = 0) => {
   // let data = [{ id: 0, handle: "test" }];
-  console.log(handles);
-  let promices = handles.map((handle) =>
-    getStaticsOfUser(handle, startSeconds)
-  );
+  // console.log(handles);
+  // let promices = handles.map((handle) =>
+  //   getStaticsOfUser(handle, startSeconds)
+  // );
+  // let data = [];
+
+  // console.log(data);
+  // return data;
+
+  const results = [];
+
+  for (const x of handles) {
+    results.push(await getStaticsOfUser(x, startSeconds));
+  }
+
+  return results;
+
   // [
   //   getStaticsOfUser("bakar", startSeconds),
   //   getStaticsOfUser("hngara", startSeconds),
   // ];
-  return Promise.all(promices);
+  // return Promise.all(promices);
   // await handles.forEach(async (handle) => {
   //   try {
   //     let st = await getStaticsOfUser(handle, startSeconds);
