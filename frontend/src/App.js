@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/problemset" element={<ProblemsetCreatorPage />} />
           <Route path="/standing" element={<StandingPage />} />
-          <Route path="/" element={<></>} />
+          <Route path="/" element={home} />
         </Routes>
       </Router>
     </div>
