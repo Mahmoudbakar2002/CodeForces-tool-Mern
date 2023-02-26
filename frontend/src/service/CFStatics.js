@@ -52,6 +52,7 @@ const getStaticsOfUsers = async (handles, startSeconds = 0) => {
 
   for (const x of handles) {
     results.push(await getStaticsOfUser(x, startSeconds));
+    // await sleep(100);
   }
 
   return results;
