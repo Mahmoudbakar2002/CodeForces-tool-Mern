@@ -53,6 +53,14 @@
     /* transform: translate(50% , 50%); */
     
 }
+.newbie {color:grey;}
+.pupil {color:green;}
+.specialist {color:#03A89E;}
+.expert {color:blue;}
+.master {color:#FF8C00;}
+.candidate .master {color:#a0a;}
+.grandmaster {color:red;}
+
 @keyframes loadding-field-anim{
     50%{
         width: 20px;
@@ -74,3 +82,18 @@
         opacity: 1;
     }
 }
+
+
+@media (max-width:908px)  {
+    .profile-view{
+        width: 90%;
+        padding: 10px 0px;
+        margin: 20px 0px;
+    } 
+   .profile-img{
+    display: block;
+    float: none !important;
+    margin: auto !important;
+   }
+  }
+  

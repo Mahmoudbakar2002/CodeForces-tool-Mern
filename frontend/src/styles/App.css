@@ -15,11 +15,16 @@
   font-weight: bold;  
   width: 80%;
 }
-.main--form .text-field{
+.text-field{
   border-radius:5px;
   font-size: large;
   padding: 5px;
+  border: 1px #34495e solid;
 }
+.text-field:focus{
+  border-color:#2c3e50;
+}
+
 .handle-form{
     display: flex;
     /* margin: 20px; */
@@ -28,4 +33,36 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+.rating-form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+.rating-form *{
+  display: inline-block;
+}
+.rating-form> div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rating-form .text-field{
+  margin-right: 20px;
+  width: 150px;
+}
+
+
+
+
+@media (max-width:907px)  { 
+  .handle-form ,.rating-form ,.rating-form>div{
+    flex-direction: column;
+  } 
+  .rating-form>div .text-field{
+    margin: 0px!important;
+  } 
+  
 }
